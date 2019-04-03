@@ -11,7 +11,7 @@ int main ( int argc, char** argv )
     if( !src.data )  { return -1; }
 
     // Make filter
-    kernel = (cv::Mat_<float>(3, 3) << -1, -1, -1, -1, 8, -1, -1, -1, -1);
+    kernel = (cv::Mat_<float>(3, 3) << 0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11);
     // Run 2D filter
     cv::filter2D(src, dst, -1 , kernel, cv::Point( -1, -1 ), 0, cv::BORDER_DEFAULT );
 
