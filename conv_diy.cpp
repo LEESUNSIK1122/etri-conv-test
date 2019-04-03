@@ -23,7 +23,7 @@ int your_conv( cv::Mat src,
     // MAKE YOUR OWN CONVOLUTION PROCESS
 
     // if success
-    return 0
+    return 0;
 
     // if fail - in the case of wrong parameters...
     // return -1

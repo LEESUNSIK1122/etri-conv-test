@@ -7,12 +7,5 @@ OPENCV = `pkg-config opencv --cflags --libs`
 LIBS = $(OPENCV)
 
 $(PROG):$(SRCS)
-<<<<<<< HEAD
-<<<<<<< HEAD
-	$(CC) $(CFLAGS) -o $(PROG) $(SRCS) $(LIBS)
-=======
 	@$(CC) $(CFLAGS) -o $(PROG) $(SRCS) $(LIBS)
->>>>>>> upstream/master
-=======
-	@$(CC) $(CFLAGS) -o $(PROG) $(SRCS) $(LIBS)
->>>>>>> upstream/master
+
