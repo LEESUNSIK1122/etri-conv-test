@@ -23,14 +23,17 @@ int your_conv( cv::Mat src,
     // MAKE YOUR OWN CONVOLUTION PROCESS
 int i,j;
 int sum =0;
-//dst_height = src_height;
-//dst_width = src_width;
+dst_height = src_height;
+dst_width = src_width;
 
-for(i = 0; i<src_height; i++)
+
+dst = cv::Mat_<float>(1000, 1000, 3);
+
+for(i = 0; i<1000; i= i+1)
 {
-	for(j = 0; j<src_width; j++)
+	for(j = 0; j<1000; j= j+1)
 	{
-     //   std::cout << src.at<cv::vec3b>(i,j)[0] << std::endl;
+     //   std::cout << src.at<cv::Vec3b>(0,0)[0] << std::endl;
      //   std::cout << dst.at<cv::vec3b>(i,j)[0] << std::endl;
 	//	dst.at<cv::Vec3b>(i,j)[0] = 100;
 	//	dst.at<cv::Vec3b>(i,j)[1] = 100;
@@ -69,13 +72,12 @@ int main ( int argc, char** argv )
     // Run 2D filter
     //cv::filter2D(src, dst, -1 , kernel, cv::Point( -1, -1 ), 0, cv::BORDER_DEFAULT );
 
-    dst = cv::imread("1.jpg");
     // ---------------------------
     your_conv(src,dst,kernel,1,0);
     // ---------------------------
 
     cv::namedWindow( "filter2D Demo", cv::WINDOW_AUTOSIZE );
-    cv::imshow( "filter2D Demo", dst );
+    cv::imshow( "filter2D Demo", kernel );
 
     cv::waitKey(0);
     return 0;
