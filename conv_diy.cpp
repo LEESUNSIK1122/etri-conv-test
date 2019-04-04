@@ -21,6 +21,23 @@ int your_conv( cv::Mat src,
     // src.ptr<unsigned char>(i)[ calculate INDEX ]
 
     // MAKE YOUR OWN CONVOLUTION PROCESS
+int i,j;
+int sum =0;
+//dst_height = src_height;
+//dst_width = src_width;
+
+for(i = 0; i<src_height; i++)
+{
+	for(j = 0; j<src_width; j++)
+	{
+     //   std::cout << src.at<cv::vec3b>(i,j)[0] << std::endl;
+     //   std::cout << dst.at<cv::vec3b>(i,j)[0] << std::endl;
+	//	dst.at<cv::Vec3b>(i,j)[0] = 100;
+	//	dst.at<cv::Vec3b>(i,j)[1] = 100;
+	//	dst.at<cv::Vec3b>(i,j)[2] = 100;
+	}
+}
+
 
     // if success
     return 0;
@@ -44,12 +61,15 @@ int main ( int argc, char** argv )
     if( !src.data )  { return -1; }
 
     // Make filter
-    kernel = (cv::Mat_<float>(3, 3) << -1, -1, -1, -1, 8, -1, -1, -1, -1);
+    kernel = (cv::Mat_<float>(3, 3, 3) << -1, -1, -1, -1, 8, -1, -1, -1, -1,
+					   0,  0,  0,  0, 0,  0,  0,  0,  0,
+					   0,  0,  0,  0, 0,  0,  0,  0,  0);
 
 
     // Run 2D filter
     //cv::filter2D(src, dst, -1 , kernel, cv::Point( -1, -1 ), 0, cv::BORDER_DEFAULT );
 
+    dst = cv::imread("1.jpg");
     // ---------------------------
     your_conv(src,dst,kernel,1,0);
     // ---------------------------

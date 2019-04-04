@@ -9,5 +9,5 @@ LIBS = $(OPENCV)
 binaries: $(PROG)
 
 $(PROG):$(SRCS)
-	@$(CC) $(CFLAGS) -o $@ $< $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
